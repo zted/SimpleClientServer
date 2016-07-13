@@ -20,9 +20,10 @@ public class Client {
     public static void main(String [] args) throws TException {
 
         Scanner input = new Scanner(System.in);
-        String queryString;
+        System.out.println("Please enter in the hostname:");
+        String inputString = input.nextLine();
 
-        TTransport transport = new TSocket("127.0.0.1", 8088);
+        TTransport transport = new TSocket(inputString, 8088);
         transport.open();
         //create the transport means and open the port for communication
 
@@ -33,12 +34,12 @@ public class Client {
         while(true) {
             System.out.println("Please enter a query here, type exit to quit: ");
 
-            queryString = input.nextLine();
-            if (queryString.toLowerCase().equals("exit")) {
+            inputString = input.nextLine();
+            if (inputString.toLowerCase().equals("exit")) {
                 break;
             }
             SearchQuery q = new SearchQuery();
-            List<String> queryList = Arrays.asList(queryString.split(" "));
+            List<String> queryList = Arrays.asList(inputString.split(" "));
             q.setKeywords(queryList);
 
             //get a result with the "search" method
