@@ -3,6 +3,7 @@ package server;
 import edu.jhu.hlt.concrete.search.Search;
 import edu.jhu.hlt.concrete.search.SearchQuery;
 import edu.jhu.hlt.concrete.search.SearchResults;
+import edu.jhu.hlt.concrete.services.ServiceInfo;
 import org.apache.thrift.TException;
 
 /**
@@ -20,5 +21,15 @@ public class ServerHandler implements Search.Iface{
         SearchResults SR = new SearchResults();
         SR.setSearchQuery(query);
         return SR;
+    }
+
+    @Override
+    public ServiceInfo about() throws TException {
+        return null;
+    }
+
+    @Override
+    public boolean alive() throws TException {
+        return false;
     }
 }

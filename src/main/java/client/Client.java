@@ -40,7 +40,7 @@ public class Client {
             }
             SearchQuery q = new SearchQuery();
             List<String> queryList = Arrays.asList(inputString.split(" "));
-            q.setKeywords(queryList);
+            q.setTerms(queryList);
 
             //get a result with the "search" method
             SearchResults r = client.searchSentences(q);
