@@ -61,7 +61,12 @@
         <dependency>
             <groupId>edu.jhu.hlt</groupId>
             <artifactId>concrete-services-core</artifactId>
-            <version>4.10.2</version>
+            <version>4.10.4</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.jhu.hlt</groupId>
+            <artifactId>concrete-util</artifactId>
+            <version>4.10.0</version>
         </dependency>
     </dependencies>
     <repositories>
